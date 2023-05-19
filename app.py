@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 app = Flask(__name__)
-connect(host="mongodb://books-api-db-1/books_api")
+connect(host="mongodb://mongodb-container/books_api")
 init_books_collection() #? Seteo contenido de libros por default en la db
 
 

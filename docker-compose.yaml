@@ -2,6 +2,7 @@ version: "3.9"
 services:
   app:
     build: .
+    container_name: books-api-container
     environment:
       - FLASK_APP_PORT=8080
     volumes:
@@ -13,3 +14,4 @@ services:
 
   db:
     image: mongo
+    container_name: mongodb-container
