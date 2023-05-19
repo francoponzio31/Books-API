@@ -1,13 +1,14 @@
-from mongoengine import connect, Document, StringField, IntField
-import json
+from mongoengine import Document, StringField, IntField
+
 
 class Books(Document):
+    meta = {"collection": "users"}
     book_id = IntField(required=True,unique=True)
     author = StringField(required=True,max_length=30)
     language = StringField(required=True,max_length=20)
     title = StringField(required=True,max_length=50)
 
-def set_db_to_default_content():
+def init_books_collection():
 
     Books.drop_collection()
 
@@ -63,14 +64,3 @@ def set_db_to_default_content():
         book.language = b["language"]
         book.title = b["title"]
         book.save()
-
-def print_db_books_collection():
-    books_collection = Books.objects()
-    parsed_books_collection = json.loads(books_collection.to_json())
-
-    for book in parsed_books_collection:
-        print(json.dumps(book, indent=4), "\n")
-
-if __name__ == "__main__":
-    #connect(db="books_api",host="127.0.0.1", port=27017) # Especificando host y puerto
-    connect(db="books_api") # Usando simplemente los parametros por default de mongoengine (localhost y puerto 27017)

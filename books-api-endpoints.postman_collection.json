@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "c74a4e8f-3225-46ff-8e99-772845d3e6c6",
+		"name": "Books API Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22380686",
+		"_collection_link": "https://speeding-crater-517781.postman.co/workspace/My-Workspace~2c23fd4b-f7a6-4f09-840c-b0ccaf80aa0b/collection/22380686-c74a4e8f-3225-46ff-8e99-772845d3e6c6?action=share&creator=22380686&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "author",
+							"value": "author test",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "language test",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "title test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/book/{book_id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"{book_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "author",
+							"value": "new author",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "new title",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "new language",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/{book_id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"{book_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/book/{book_id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"{book_id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
